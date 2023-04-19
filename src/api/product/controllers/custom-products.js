@@ -1,8 +1,8 @@
-const {createCoreControler} = require("@strapi/strapi").factories;
+const { createCoreController } = require("@strapi/strapi").factories;
 
 const moduleId = "api::product.product";
 
-module.exports = createCoreControler(moduleId, ({ strapi }) => ({
+module.exports = createCoreController(moduleId, ({ strapi }) => ({
     test: async (ctx) => {
         console.log("TEST");
     }
