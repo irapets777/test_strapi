@@ -19,14 +19,14 @@ module.exports = createCoreService(moduleId, ({strapi, ctx}) =>({
 
     calcSumProducts: async () => {
         const response = await strapi.db.query(moduleId).findMany({
-            select: ['Price', "ID"],
+            select: ['price', "ID"],
            
         });
         console.log(response);
         let sum = 0;
         let brokeList = [];
         response.forEach((el) => {
-            el.Price ? sum += el.Price : brokeList.push(el)
+            el.price ? sum += el.price : brokeList.push(el)
         })
         return {
             success: true,

@@ -3,18 +3,16 @@
 /**
  * A set of functions called "actions" for `crm`
  */
-const orderId = "api::order.order";
+// const orderId = "api::uploadPost.uploadPost";
 
 module.exports = {
-  create: async (ctx, next) => {
+  send: async (ctx, next) => {
     // const data = ctx.request.body;
     let response = await strapi
       .service(orderId)
-      .createPost("hello");
+      .getPosts("hello");
+
     ctx.send(response);
   },
-  exp: async (ctx) =>{
-    ctx.send(await strapi.service(orderId).exp())
-}
   
 };
